@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <deeptracking>
+            <dpd_group>
+                <general>
+                    <order_statuses>DPD_ACCEPTED,DPD_AT_SENDING_DEPOT,DPD_ON_THE_ROAD,DPD_AT_DELIVERY_DEPOT,complete</order_statuses>
+                    <days_back>5</days_back>
+                    <limit>10</limit>
+                    <cron>*/5 * * * *</cron>
+                </general>
+                <service_credentials>
+                    <soap_header_url>http://dpd.com/common/service/types/Authentication/2.0</soap_header_url>
+                </service_credentials>
+            </dpd_group>
+            <dhl_group>
+                <general>
+                    <order_statuses>DHL_DELIVERY_TO_PACKSTATION,DHL_START_PARCEL_CENTER,DHL_COLLECTION_SUCCESSFUL,DHL_DESTINATION_PARCEL_CENTER,DHL_IN_DELIVERY,complete</order_statuses>
+                    <days_back>5</days_back>
+                    <limit>10</limit>
+                    <cron>*/5 * * * *</cron>
+                </general>
+                <service_credentials>
+                    <credentials>ENDPOINT_SANDBOX</credentials>
+                </service_credentials>
+            </dhl_group>
+            <hellmann_group>
+                <general>
+                    <order_statuses>HELLMANN_IN_TRANSFER,HELLMANN_ACTION_NECESSARY,HELLMANN_DELIVERED_WITH_DAMAGES,complete</order_statuses>
+                    <days_back>5</days_back>
+                    <limit>10</limit>
+                    <cron>*/5 * * * *</cron>
+                </general>
+                <service_credentials>
+                    <api_url>https://portal.emea.hellmann.net/tracking-public/api/v3/shipments</api_url>
+                </service_credentials>
+            </hellmann_group>
+            <ups_group>
+                <general>
+                    <order_statuses>UPS_IN_TRANSIT,UPS_EXCEPTION,UPS_PICKUP,UPS_MANIFEST_PICKUP,complete</order_statuses>
+                    <days_back>5</days_back>
+                    <limit>10</limit>
+                    <cron>*/5 * * * *</cron>
+                </general>
+            </ups_group>
+        </deeptracking>
+    </default>
+</config>

@@ -1,0 +1,25 @@
+<!--@subject {{trans 'Email Notification About Status Order' }} @-->
+<!--@vars
+{
+"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"var arrOrderId"
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+}
+@-->
+<!--@styles
+body,td { background: #fff !important;color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+{{template config_path="design/email/header_template"}}
+
+<body>
+<h1>Guten Tag, Truong</h1>
+<div>All order Id: {{var arr_order_id}}</div>
+<p>shipping status has stopped</p>
+</body>
+{{template config_path="design/email/footer_template"}}
+

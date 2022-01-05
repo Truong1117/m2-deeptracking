@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Commercers\DeepTracking\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Commercers\DeepTracking\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">DeepTrackingLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Commercers\DeepTracking\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="deeptracking_dpd_log_listing_data_source" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\DpdLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Commercers\DeepTracking\Model\ResourceModel\DpdLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">commercers_deeptracking_dpd_log</argument>
+            <argument name="resourceModel" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\DpdLog</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="deeptracking_dhl_log_listing_data_source" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\DhlLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Commercers\DeepTracking\Model\ResourceModel\DhlLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">commercers_deeptracking_dhl_log</argument>
+            <argument name="resourceModel" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\DhlLog</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="deeptracking_hellmann_log_listing_data_source" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\HellmannLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Commercers\DeepTracking\Model\ResourceModel\HellmannLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">commercers_deeptracking_hellmann_log</argument>
+            <argument name="resourceModel" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\HellmannLog</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="deeptracking_ups_log_listing_data_source" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\UpsLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Commercers\DeepTracking\Model\ResourceModel\UpsLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">commercers_deeptracking_ups_log</argument>
+            <argument name="resourceModel" xsi:type="string">Commercers\DeepTracking\Model\ResourceModel\UpsLog</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Commercers_DeepTracking::deeptracking" title="Deep Tracking" module="Commercers_DeepTracking" sortOrder="50" resource="Commercers_DeepTracking::deeptracking"/>
+
+        <add id="Commercers_DeepTracking::deeptracking_dpdtrack" title="DPD Track" module="Commercers_DeepTracking" sortOrder="1" resource="Commercers_DeepTracking::deeptracking_dpdtrack" parent="Commercers_DeepTracking::deeptracking"/>
+        <add id="Commercers_DeepTracking::deeptracking_dpdtrack_log" title="DPD Log" module="Commercers_DeepTracking" sortOrder="2" parent="Commercers_DeepTracking::deeptracking_dpdtrack" action="deeptracking/dpd/log" resource="Commercers_DeepTracking::deeptracking_dpdtrack_log"/>
+
+        <add id="Commercers_DeepTracking::deeptracking_dhltrack" title="DHL Track" module="Commercers_DeepTracking" sortOrder="2" resource="Commercers_DeepTracking::deeptracking_dhltrack" parent="Commercers_DeepTracking::deeptracking"/>
+        <add id="Commercers_DeepTracking::deeptracking_dhltrack_log" title="DHL Log" module="Commercers_DeepTracking" sortOrder="1" parent="Commercers_DeepTracking::deeptracking_dhltrack" action="deeptracking/dhl/log" resource="Commercers_DeepTracking::deeptracking_dhltrack_log"/>
+
+        <add id="Commercers_DeepTracking::deeptracking_hellmanntrack" title="Hellmann Track" module="Commercers_DeepTracking" sortOrder="3" resource="Commercers_DeepTracking::deeptracking_hellmanntrack" parent="Commercers_DeepTracking::deeptracking"/>
+        <add id="Commercers_DeepTracking::deeptracking_hellmanntrack_log" title="Hellmann Log" module="Commercers_DeepTracking" sortOrder="1" parent="Commercers_DeepTracking::deeptracking_hellmanntrack" action="deeptracking/hellmann/log" resource="Commercers_DeepTracking::deeptracking_hellmanntrack_log"/>
+
+        <add id="Commercers_DeepTracking::deeptracking_upstrack" title="UPS Track" module="Commercers_DeepTracking" sortOrder="4" resource="Commercers_DeepTracking::deeptracking_upstrack" parent="Commercers_DeepTracking::deeptracking"/>
+        <add id="Commercers_DeepTracking::deeptracking_ups_log" title="UPS Log" module="Commercers_DeepTracking" sortOrder="1" parent="Commercers_DeepTracking::deeptracking_upstrack" action="deeptracking/ups/log" resource="Commercers_DeepTracking::deeptracking_ups_log"/>
+    </menu>
+</config>

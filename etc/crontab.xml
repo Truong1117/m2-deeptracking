@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job instance="Commercers\DeepTracking\Cron\Dpd\Track" method="execute" name="commercers_deeptracking_dpd_cron">
+            <config_path>deeptracking/dpd_group/general/cron</config_path>
+        </job>
+        <job instance="Commercers\DeepTracking\Cron\Dhl\Track" method="execute" name="commercers_deeptracking_dhl_cron">
+            <config_path>deeptracking/dhl_group/general/cron</config_path>
+        </job>
+        <job instance="Commercers\DeepTracking\Cron\Hellmann\Track" method="execute" name="commercers_deeptracking_hellmann_cron">
+            <config_path>deeptracking/hellmann_group/general/cron</config_path>
+        </job>
+        <job instance="Commercers\DeepTracking\Cron\Ups\Track" method="execute" name="commercers_deeptracking_ups_cron">
+            <config_path>deeptracking/ups_group/general/cron</config_path>
+        </job>
+        <job name="send_email_reminder_order_status" instance="Commercers\DeepTracking\Cron\OrderStatus\SendEmailReminderOrderStatus" method="execute">
+            <schedule>0 1 * * *</schedule>
+        </job>
+    </group>
+</config>

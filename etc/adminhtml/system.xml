@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="commercers" translate="label" sortOrder="999">
+            <label>Commercers</label>
+        </tab>
+        <section id="deeptracking" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Deep Tracking</label>
+            <tab>commercers</tab>
+            <resource>Commercers_DeepTracking::deeptracking_configuration</resource>
+            <!-- DPD GROUP CONFIG -->
+            <group id="dpd_group" translate="label" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>DPD Tracking</label>
+                <fieldset_css>paypal-top-section paypal-other-header</fieldset_css>
+                <frontend_model>\Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <attribute type="displayIn">dpd_group</attribute>
+                    <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="order_statuses" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Order Statuses</label>
+                        <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                        <comment>Please select all Order Statuses for which a request of the shipment status is being sent to the shipment provider.</comment>
+                    </field>
+                    <field id="days_back" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of days back</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="limit" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of orders per run</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="cron" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cron Frequency</label>
+                        <comment>e.g "*/5 * * * *"</comment>
+                    </field>
+                    <field id="carrier_title" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Carrier title</label>
+                    </field>
+                </group>
+                <group id="service_credentials" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Web Services</label>
+                    <attribute type="displayIn">dpd_group</attribute>
+                    <field id="delisid" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Delis ID</label>
+                    </field>
+                    <field id="password" translate="label" type="password" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Password</label>
+                    </field>
+                    <field id="soap_header_url" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>SOAP Header URL</label>
+                    </field>
+                    <field id="login" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Login URL</label>
+                    </field>
+                    <field id="parcel_life_cycle" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Parcel Life Cycle Service</label>
+                    </field>
+                </group>
+            </group>
+            <!-- END DPD GROUP CONFIG -->
+            <!-- DHL GROUP CONFIG -->
+            <group id="dhl_group" translate="label" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>DHL Tracking</label>
+                <fieldset_css>paypal-top-section paypal-other-header</fieldset_css>
+                <frontend_model>\Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <attribute type="displayIn">dhl_group</attribute>
+                    <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="order_statuses" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Order Statuses</label>
+                        <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                        <comment>Please select all Order Statuses for which a request of the shipment status is being sent to the shipment provider.</comment>
+                    </field>
+                    <field id="days_back" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of days back</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="limit" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of orders per run</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="cron" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cron Frequency</label>
+                        <comment>e.g "*/5 * * * *"</comment>
+                    </field>
+                    <field id="carrier_title" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Carrier title</label>
+                    </field>
+                </group>
+                <group id="service_credentials" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Web Services</label>
+                    <attribute type="displayIn">dhl_group</attribute>
+                    <field id="credentials" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Credentials</label>
+                        <source_model>Commercers\DeepTracking\Model\Config\Source\Dhl\Options</source_model>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                    </field>
+                    <field id="cig_user" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>CIG User</label>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                    </field>
+                    <field id="cig_password" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>CIG Password</label>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                    </field>
+                    <field id="tnt_user" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>TNT User</label>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                    </field>
+                    <field id="tnt_password" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>TNT Password</label>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                    </field>
+                </group>
+            </group>
+            <!-- END DHL GROUP CONFIG -->
+
+            <!-- HELLMANN GROUP CONFIG -->
+            <group id="hellmann_group" translate="label" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Hellmann Tracking</label>
+                <fieldset_css>paypal-top-section paypal-other-header</fieldset_css>
+                <frontend_model>\Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <attribute type="displayIn">hellmann_group</attribute>
+                    <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="order_statuses" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Order Statuses</label>
+                        <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                        <comment>Please select all Order Statuses for which a request of the shipment status is being sent to the shipment provider.</comment>
+                    </field>
+                    <field id="days_back" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of days back</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="limit" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of orders per run</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="cron" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cron Frequency</label>
+                        <comment>e.g "*/5 * * * *"</comment>
+                    </field>
+                    <field id="carrier_title" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Carrier title</label>
+                    </field>
+                </group>
+                <group id="service_credentials" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Web Services</label>
+                    <attribute type="displayIn">hellmann_group</attribute>
+                    <field id="api_url" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Tracking Url</label>
+                    </field>
+                </group>
+            </group>
+            <!-- END HELLMANN GROUP CONFIG -->
+
+            <!-- UPS GROUP CONFIG -->
+            <group id="ups_group" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>UPS Tracking</label>
+                <fieldset_css>paypal-top-section paypal-other-header</fieldset_css>
+                <frontend_model>\Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <attribute type="displayIn">ups_group</attribute>
+                    <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="order_statuses" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Order Statuses</label>
+                        <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                        <comment>Please select all Order Statuses for which a request of the shipment status is being sent to the shipment provider.</comment>
+                    </field>
+                    <field id="days_back" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of days back</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="limit" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of orders per run</label>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="cron" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cron Frequency</label>
+                        <comment>e.g "*/5 * * * *"</comment>
+                    </field>
+                    <field id="carrier_title" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Carrier title</label>
+                    </field>
+                </group>
+                <group id="service_credentials" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Web Services</label>
+                    <attribute type="displayIn">ups_group</attribute>
+                    <field id="user_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>User Id</label>
+                    </field>
+                    <field id="password" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Password</label>
+                    </field>
+                    <field id="access_key" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Access Key</label>
+                    </field>
+                    <field id="is_sandbox" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Is Sandbox</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <!-- END UPS GROUP CONFIG -->
+
+            <!-- ORDER STATUS CONFIG-->
+            <group id="email_notification" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Notification</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Notification - Yes/No</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_addresses" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Addresses</label>
+                    <comment>Please enter email revice separated by ",". Example: truongdong@commercers.com, dongvantruong1117@gmail.com</comment>
+                </field>
+                <field id="shipping_status" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shipping status</label>
+                    <source_model>Commercers\DeepTracking\Model\Adminhtml\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="delay_in_days" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delay in days</label>
+                    <comment>Textfield for If the status has not changed for x days</comment>
+                    <source_model>Commercers\DeepTracking\Model\Source\DelayDays</source_model>
+                </field>
+                <field id="email_send_reminder" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email template for Send Reminder</label>
+                    <comment>email-template-send-reminder</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+              <!-- END ORDER STATUS CONFIG-->
+        </section>
+    </system>
+</config>
