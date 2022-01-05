@@ -58,4 +58,10 @@
     Accesskey: EDA422C75A7A0E55
     Package test: 1ZV2F791DL54964422
     
-# m2-deeptracking
+# ORDER STATUS 
+    We would like a user to receive an email notification when the shipping status has stopped.
+    Configuration per shipping service provider:
+    Enable Notification - Yes/No
+    Email Addresses - Multiple email addresses possible
+    Select shipping status - Multi select
+    Delay in days - Textfield for If the status has not changed for x days
